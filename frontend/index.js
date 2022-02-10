@@ -1,0 +1,62 @@
+var jokes = [
+    {
+        id: 1,
+        content: "A child asked his father, \"How were people born?\" So his father said, \"Adam and Eve made babies, then their babies became adults and made babies, and so on.\"The child then went to his mother, asked her the same question and she told him, \"We were monkeys then we evolved to become like we are now.\"The child ran back to his father and said, \"You lied to me!\" His father replied, \"No, your mom was talking about her side of the family.\""
+    },
+
+    {
+        id: 2,
+        content: "Teacher: \"Kids,what does the chicken give you?\" Student: \"Meat!\" Teacher: \"Very good! Now what does the pig give you?\" Student: \"Bacon!\" Teacher: \"Great! And what does the fat cow give you?\" Student: \"Homework!\""
+    },
+
+    {
+        id: 3,
+        content: "The teacher asked Jimmy, \"Why is your cat at school today Jimmy?\" Jimmy replied crying, \"Because I heard my daddy tell my mommy, 'I am going to eat that pussy once Jimmy leaves for school today!'\""
+    },
+
+    {
+        id: 4,
+        content: "A housewife, an accountant and a lawyer were asked \"How much is 2+2?\" The housewife replies: \"Four!\". The accountant says: \"I think it's either 3 or 4. Let me run those figures through my spreadsheet one more time.\" The lawyer pulls the drapes, dims the lights and asks in a hushed voice, \"How much do you want it to be?\""
+    }
+]
+
+const contentText = document.querySelector('.content-text');
+
+// randomIndex 
+var currentIndex = Math.floor(Math.random() * jokes.length);
+contentText.innerHTML = jokes[currentIndex].content;
+
+function handleChangeJoke() {
+    jokes.splice(currentIndex, 1);
+
+    if (jokes.length > 0) {
+        
+        // new index
+        var newIndex = Math.floor(Math.random() * jokes.length);
+        currentIndex = newIndex;
+
+        contentText.innerHTML = jokes[currentIndex].content;
+    }
+    else {
+        contentText.innerHTML = "\"That's all the jokes for today! Come back another day!\"";
+    }
+}
+
+function saveCookie(cookievalue) {
+    document.cookie = 'Jim - ' + cookievalue;
+}
+
+function saveVote() {
+    localStorage.setItem('Jim', 'hasVote' + jokes[currentIndex].id);
+}
+
+document.querySelectorAll('.btn').forEach(item => {
+    item.addEventListener('click', (event) => {
+
+        handleChangeJoke();
+        saveCookie('vote - ' + jokes[currentIndex].id);
+        saveVote();
+
+    })
+})
+

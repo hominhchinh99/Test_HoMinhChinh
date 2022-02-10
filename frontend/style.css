@@ -1,0 +1,151 @@
+:root {
+    --text-color: #646464;
+    --secondary-color: #29b363;
+    --while-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    padding: 16px 0;
+    min-width: 272px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--while-color);
+}
+
+.btn__primary{
+    background-color: #2c7edb;
+    border-bottom: 3px solid #1c69c0;
+}
+
+.btn__secondary{
+    background-color: var(--secondary-color);
+    border-bottom: 3px solid #19984e;
+    margin-left: 32px;
+}
+
+/* header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.header-logo{
+    margin-left: 280px;
+}
+
+.header-info{
+    display: flex;
+    align-items: center;
+    margin-right: 214px;
+}
+
+.info-content p {
+    margin: 0;
+}
+
+.info-text{
+    color: #b2b2b2;
+}
+
+.info-name{
+    color: #4b4b4b;
+    text-align: right;
+}
+
+.info-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+/* banner */
+.banner {
+    height: 250px;
+    background-color: var(--secondary-color);
+    color: var(--while-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.banner-heading{
+    margin-bottom: 20px;
+}
+
+/* content */
+.content {
+    margin-top: 70px;
+    margin-bottom: 142px;
+}
+.content-text {
+    margin: 0 318px;
+    color: var(--text-color);
+    line-height: 24px;
+    text-align: center;
+}
+
+.content-btn {
+    margin-top: 102px;
+    display: flex;
+    justify-content: center;
+}
+
+/* footer */
+.footer {
+    margin: 0 346px 42px;
+    text-align: center;
+}
+
+.footer-text{
+    color: #969696;
+    line-height: 24px;
+}
+
+.footer-copyright {
+    margin-top: 30px;
+    color: var(--text-color);
+}
+
+/* Mobile */
+ @media screen and (max-width: 767px) { 
+    .btn {
+        padding: 16px 0;
+        min-width: 130px;
+        text-align: center;
+        cursor: pointer;
+        color: var(--while-color);
+    }
+
+    .content {
+        margin-bottom: 70px;
+    }
+ }
+
+/* Mobile & Tablet */
+ @media screen and (max-width: 1023px) {
+    .header-logo{
+        margin-left: 0;
+    }
+    
+    .header-info{
+        margin-right: 0;
+    }
+
+    .content-text {
+        margin: 0 50px;
+    }
+
+    .footer {
+        margin: 0 50px 26px;
+    }
+ }
