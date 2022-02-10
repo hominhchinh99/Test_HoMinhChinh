@@ -30,7 +30,7 @@ function handleChangeJoke() {
     jokes.splice(currentIndex, 1);
 
     if (jokes.length > 0) {
-        
+
         // new index
         var newIndex = Math.floor(Math.random() * jokes.length);
         currentIndex = newIndex;
@@ -54,9 +54,11 @@ document.querySelectorAll('.btn').forEach(item => {
     item.addEventListener('click', (event) => {
 
         handleChangeJoke();
-        saveCookie('vote - ' + jokes[currentIndex].id);
-        saveVote();
 
+        if (jokes.length > 0) {
+            saveCookie('vote - ' + jokes[currentIndex].id);
+            saveVote();
+        }
     })
 })
 
